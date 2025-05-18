@@ -33,6 +33,35 @@ In this case, you are defining stuff as code and then it gets run automatically,
 * what it looks for
 * how to define assets
 
-The header is where all information goes. If you're familiar with LR2 you can think of it as the place where you define every single element. For example, something like `#STARTINPUT` would be defined as `input = [whaever value you wanna define it as]`. this is both helful yet somewhat annoying as it carries over the simplicity of skinning from LR2 to beatoraja, the downside being that you must define everything as tables, and you have to automate some parts of it with code, which can be both obnoxious to do as a beginner and a total nightmare to read for another person.
+The header is where all information goes. If you're familiar with LR2 you can think of it as the place where you define every single element. For example, something like `#STARTINPUT` would be defined as `input = [whaever value you wanna define it as]`.
+
+Here is an example of what that looks like, courtesy of Mr. Mary:
+```lua
+local header = {
+    type = 0,
+    name = "PIZDO DYSK TYSIONC",
+    w = 1920,
+    h = 1080,
+    loadend = 3000,
+    playstart = 1500,
+    scene = 3600000,
+    input = 500,
+    close = 1000,
+    fadeout = 100,
+    property = {
+        {name = "Playside", def = "Left", item = {
+            {name = "Left", op = 910},
+            {name = "Right", op = 911},
+        }},
+    },
+    filepath = {
+        {name = "judge", path = "judge/*.png"},
+        {name = "bomb", path = "bomb/*.png"},
+        {name = "pomyuchara", path = "pomyu/*"}
+    },
+    offset = {}
+}
+```
+This is both helful yet somewhat annoying as it carries over the simplicity of skinning from LR2 to beatoraja, the downside being that you must define everything as tables, and you have to automate some parts of it with code. This is both obnoxious to do as a beginner and a total nightmare to read for anyone else.
 
 Either way, we have a lot of work done for us already! you can check out the [LR2 skinhelp page](https://right-stick.sub.jp/lr2skinhelp.html) to figure out different parts. It is still all in japanese and could be cumbersome to go through, but that's what this guide is for!
